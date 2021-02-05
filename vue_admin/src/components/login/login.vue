@@ -39,9 +39,6 @@ export default {
           callback();
         }
       };
-
-
-
             return {
                 labelPosition: 'top',
                 user: {
@@ -55,12 +52,8 @@ export default {
                  password: [
                   { validator: validatePassword, trigger: 'blur' }
                 ],
-                
-          
         }
             };
-
-            
             },
             methods:{
                 doLogin(){

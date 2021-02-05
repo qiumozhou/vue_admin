@@ -1,16 +1,12 @@
 <template>
 <el-card class="box-card">
     <div>
-        <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-            <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-        </el-breadcrumb>
+        <my-bread level1 = "用户管理" level2 = "用户列表"></my-bread>
     </div>
     <div>
 
         <el-row>
-            <el-col :span="8" :offset="0" style="margin-left:-36px"> 
+            <el-col :span="8" :offset="0" style="margin-left:-36px">
                 <div class="grid-content bg-purple">
                     <el-input placeholder="请输入内容" style=" width:150px"></el-input>
                     <el-button type="info" icon="el-icon-search">搜索</el-button>
@@ -20,23 +16,21 @@
         </el-row>
         <el-row>
             <el-table :data="tableData" stripe style="width: 100%">
-                <el-table-column prop="date" label="日期" width="180">
+                <el-table-column prop="date" label="日期" >
                 </el-table-column>
-                <el-table-column prop="name" label="姓名" width="180">
+                <el-table-column prop="name" label="姓名" >
                 </el-table-column>
-                <el-table-column prop="address" label="地址" width="250">
+                <el-table-column prop="address" label="地址" >
                 </el-table-column>
-                <el-table-column label="用户状态" width="180">
+                <el-table-column label="用户状态" >
                     <template slot-scope="scope">
                         <el-switch v-model="scope.row.status" active-color="#13ce66" inactive-color="#ff4949" active-value=1 inactive-value=0>
                         </el-switch>
                     </template>
                 </el-table-column>
-                <el-table-column prop="address" label="操作" width="250">
-                    <el-button-group>
-                        <el-button type="primary" icon="el-icon-edit" circle></el-button>
-                        <el-button type="danger" icon="el-icon-delete" circle></el-button>
-                    </el-button-group>
+                <el-table-column prop="address" label="操作" >
+                        <el-button type="primary" plain icon="el-icon-edit" circle></el-button>
+                        <el-button type="danger" plain icon="el-icon-delete" circle></el-button>                
                 </el-table-column>
             </el-table>
         </el-row>

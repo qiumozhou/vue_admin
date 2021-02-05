@@ -7,22 +7,36 @@
 </el-row>
   </el-header>
   <el-container>
-    <el-aside width="210px">
+    <el-aside width="200px">
     <el-menu
       default-active="1"
       background-color="#545c64"
       text-color="#fff"
-      active-text-color="#ffd04b">
+      active-text-color="#ffd04b"
+      router>
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>用户管理</span>
         </template>
-         <el-menu-item index="1-3">
-           <router-link :to="'/users'" >
+         <el-menu-item index="users">
               <i class="el-icon-s-check"></i>
               <span>用户列表</span>
-          </router-link>
+         </el-menu-item>
+      </el-submenu>
+
+      <el-submenu index="2">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>权限管理</span>
+        </template>
+         <el-menu-item index="roles">
+              <i class="el-icon-s-check"></i>
+              <span>角色列表</span>
+         </el-menu-item>
+          <el-menu-item index="permissions">
+              <i class="el-icon-s-check"></i>
+              <span>权限列表</span>
          </el-menu-item>
       </el-submenu>
     </el-menu>
@@ -76,14 +90,14 @@ export default {
   }
   
   .el-aside {
-    background-color: #D3DCE6;
+    background-color: #545c64;
     color: #333;
     text-align: center;
     line-height: 100px;
   }
   
   .el-main {
-    background-color: #E9EEF3;
+    background-color: whitesmoke;
     color: #333;
     text-align: center;
     line-height: 100px;
