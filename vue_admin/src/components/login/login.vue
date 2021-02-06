@@ -59,7 +59,7 @@ export default {
                 doLogin(){
         this.$refs["user"].validate((valid) => {
             if(valid){
-                       this.$http.post('login',this.user).then(ret =>{
+                      this.$http.post('login',this.user).then(ret =>{
                      if (ret.data.code == 10001){
                        this.$message({
                         message: '登录成功',
